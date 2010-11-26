@@ -4116,11 +4116,11 @@ function! MyFoldText(...)
         let l:line .= '...'
     endif
     if b:columnview && (origline =~ b:headMatch) 
-        let l:line .= PrePad(GetColumns(foldstart), winwidth(0)-len(l:line) -3)
+        let l:line .= PrePad(GetColumns(foldstart), winwidth(0)-len(l:line) - 5)
     endif
     if !a:0 && g:show_fold_lines && !b:columnview 
         let l:line .= PrePad("(" . PrePad(l:txtmrk . (v:foldend - v:foldstart) . ")",5),
-                    \ winwidth(0)-len(l:line) - 3) 
+                    \ winwidth(0)-len(l:line) - 5) 
     endif
 
     return l:line
